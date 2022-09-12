@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ToDoList</title>
+</head>
+
+<body>
+  <h1><%= dateBeingDisplayed %></h1>
+  <ul>
+    <li>X</li>
+    <li>Y</li>
+    <li>Z</li>
+    <% for(var i=0;i<newItemAdded.length;i++){ %>
+    <li> <%= newItemAdded[i] %> </li>
+    <% } %>
+  </ul>
+  <form action="/" method="POST">
+    <input type="text" name="workAdded" placeholder="New item" autocomplete="off">
+    <button type="submit" name="listType" value="">+</button>
+  </form>
+</body>
+
+</html>
