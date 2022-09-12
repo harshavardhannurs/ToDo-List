@@ -17,9 +17,19 @@ app.get("/", (req, res)=>{
 });
 
 app.post("/", (req, res)=>{
+  console.log(req.body);
   const itemAdded=req.body.workAdded;
+  if(req.body.listType==='Work'){
+    workList.push(itemAdded);
+    res.redirect("/work");
+  }else{
   toDoList.push(itemAdded);
   res.redirect("/");
+  }
+});
+
+app.get("/work", (req, res)=>{
+  res.render("index", {dateBeingDisplayed:"Work List", newItemAdded:workList});
 });
 
 app.listen(process.env.PORT||3000, ()=>{
